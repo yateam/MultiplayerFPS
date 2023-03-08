@@ -69,7 +69,7 @@ void AWeapon::DoFire()
 	{
 		MulticastPlayHitEffects(OutHit);
 
-		AJoyWayCharacter* OtherChar = Cast<AJoyWayCharacter>(OutHit.Actor);
+		AJoyWayCharacter* OtherChar = Cast<AJoyWayCharacter>(OutHit.GetActor());
 		if (IsValid(OtherChar))
 		{
 			const FVector HitDirection = (OutHit.Location - GetActorLocation()).GetSafeNormal();
